@@ -39,38 +39,35 @@ void Print(vector<string>PrintDeck)
         cout<<"  │       ERROR │"<<endl;
         cout<<"  └─────────────┘"<<endl;
     }
+    string digit;
+    if (str[0] == '1')
+    {
+        digit = "10";
+    }
+    else
+    {
+       digit = str[0];
+       digit += ' ';
+    }
 
-    char digit=str[0];
     cout<<"  ┌─────────────┐"<<endl;
-    cout<<"  │ "<<digit<<"           │"<<endl;
+    cout<<"  │ "<<digit<<"          │"<<endl;
     cout<<"  │             │"<<endl;
     cout<<"  │             │"<<endl;
     cout<<"  │      "<<symbol<<"      │"<<endl;
     cout<<"  │             │"<<endl;
     cout<<"  │             │"<<endl;
-    cout<<"  │           "<<digit<<" │"<<endl;
+    cout<<"  │           "<<digit<<"│"<<endl;
     cout<<"  └─────────────┘"<<endl;
 }
 
 int CardValue(string str)
 {
     int tmp;
-    if(str[0]=='2')
-        tmp=2;
-    else if(str[0]=='3')
-        tmp=3;
-    else if(str[0]=='4')
-        tmp=4;
-    else if(str[0]=='5')
-        tmp=5;
-    else if(str[0]=='6')
-        tmp=6;
-    else if(str[0]=='7')
-        tmp=7;
-    else if(str[0]=='8')
-        tmp=8;
-    else if(str[0]=='9')
-        tmp=9;
+    if(str[0] >= '2' && str[0] <= '9')
+    {
+        tmp=str[0]-'0';
+    }
     else if(str[0]=='1')
         tmp=10;
     else if(str[0]=='J')
